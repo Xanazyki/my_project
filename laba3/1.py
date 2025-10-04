@@ -99,3 +99,24 @@ data_time = datetime.now()
 print(f"Текущая дата и время: {data_time}")
 print(f"Текущая дата: {data_time.date()}")
 print(f"Текущее время: {data_time.time()}")
+
+
+#9. Расчет дат
+from datetime import datetime, date
+
+birthday = date(2005, 7, 27)
+today = date.today()
+
+print(f"Дата рождения: {birthday}")
+print(f"Сегодняшняя дата: {today}")
+
+proshlo = (today - birthday).days
+print(f"Дней прошло с момента рождения: {proshlo}")
+
+next_birthday = date(today.year, birthday.month, birthday.day)
+if next_birthday < today:
+    next_birthday = date(today.year + 1, birthday.month, birthday.day)
+days_to_next_birthday = (next_birthday - today).days
+
+print(f"Следующий день рождения: {next_birthday}")
+print(f"Дней до следующего дня рождения: {days_to_next_birthday}")
