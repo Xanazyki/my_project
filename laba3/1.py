@@ -35,7 +35,7 @@ for x in Countdown(n):
     print(x)
 
 
-#5. 
+#5. негеработ Финаччи
 def fibonacci(n):
     a, b = 0, 1
     count = 0
@@ -48,3 +48,24 @@ n = int(input("Введите число n: "))
 print(f"Первые {n} чисел Фибоначчи:")
 for num in fibonacci(n):
     print(num)
+
+
+#6. Калькулятор вклада
+from decimal import Decimal
+
+def deposit_calculator():
+    nach = Decimal(input("Начальная сумма (рубли.копейки): "))
+    stavka = Decimal(input("Процентная ставка (например, 12.5): "))
+    srok = Decimal(input("Срок в годах (в годах): "))
+    
+    monthly_rate = stavka / (Decimal('12') * Decimal('100'))
+    months = Decimal('12') * srok
+    itog = nach * (Decimal('1') + monthly_rate) ** months
+    itog = itog.quantize(Decimal('0.01'))
+    
+    profit = itog - nach
+    print('\n')
+    print(f"Итоговая сумма: {itog} руб.")
+    print(f"Общая прибыль: {profit} руб.")
+
+deposit_calculator()
