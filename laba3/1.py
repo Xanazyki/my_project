@@ -89,3 +89,13 @@ print(f"Сложение: {frac1} + {frac2} = {sum}")
 print(f"Вычитание: {frac1} - {frac2} = {vich}")
 print(f"Умножение: {frac1} * {frac2} = {umn}")
 print(f"Деление: {frac1} / {frac2} = {delit}")
+
+
+#8. Дата
+from datetime import datetime
+
+data_time = datetime.now()
+
+print(f"Текущая дата и время: {data_time}")
+print(f"Текущая дата: {data_time.date()}")
+print(f"Текущее время: {data_time.time()}")
