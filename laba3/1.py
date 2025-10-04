@@ -4,17 +4,20 @@ print(kvadrat)
 
 
 #2. все четные числа
+print('/n')
 chet = [x for x in range(1, 20) if x % 2 == 0]
 print(chet)
 
 
 #3. Все слова длиннее трех символов
+print('/n')
 words = ["python", "Java", "c++", "Rust", "go"]
 result = [word.upper() for word in words if len(word) > 3]
 print(result)
 
 
 #4. Класс-итератор, обратное возвращение
+print('/n')
 class Countdown:
     def __init__(self, n):
         self.n = n
@@ -36,6 +39,7 @@ for x in Countdown(n):
 
 
 #5. негеработ Финаччи
+print('/n')
 def fibonacci(n):
     a, b = 0, 1
     count = 0
@@ -51,6 +55,7 @@ for num in fibonacci(n):
 
 
 #6. Калькулятор вклада
+print('/n')
 from decimal import Decimal
 
 def deposit_calculator():
@@ -72,6 +77,7 @@ deposit_calculator()
 
 
 #7. Калькулятор дробей
+print('/n')
 from fractions import Fraction
 
 frac1 = Fraction(3, 4)
@@ -92,6 +98,7 @@ print(f"Деление: {frac1} / {frac2} = {delit}")
 
 
 #8. Дата
+print('/n')
 from datetime import datetime
 
 data_time = datetime.now()
@@ -102,6 +109,7 @@ print(f"Текущее время: {data_time.time()}")
 
 
 #9. Расчет дат
+print('/n')
 from datetime import datetime, date
 
 birthday = date(2005, 7, 27)
@@ -120,3 +128,32 @@ days_to_next_birthday = (next_birthday - today).days
 
 print(f"Следующий день рождения: {next_birthday}")
 print(f"Дней до следующего дня рождения: {days_to_next_birthday}")
+
+
+#10. Строка с Date
+print('/n')
+from datetime import datetime
+
+current_datetime = datetime.now()
+
+def format_datetime_ru(dt):
+    months = {
+        1: 'января', 
+        2: 'февраля', 
+        3: 'марта', 
+        4: 'апреля',
+        5: 'мая', 
+        6: 'июня', 
+        7: 'июля', 
+        8: 'августа',
+        9: 'сентября', 
+        10: 'октября', 
+        11: 'ноября', 
+        12: 'декабря'
+    }
+    
+    formatted = f"Сегодня {dt.day} {months[dt.month]} {dt.year} года, время: {dt:%H:%M}"
+    
+    return formatted
+
+print(format_datetime_ru(current_datetime))
