@@ -11,3 +11,24 @@ print(chet)
 words = ["python", "Java", "c++", "Rust", "go"]
 result = [word.upper() for word in words if len(word) > 3]
 print(result)
+
+#4. Класс-итератор, обратное возвращение
+class Countdown:
+    def __init__(self, n):
+        self.n = n
+        self.current = n
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.current < 1:
+            raise StopIteration
+        value = self.current
+        self.current -= 1
+        return value
+
+n = int(input("Введите число n"))
+for x in Countdown(n):
+    print(x)
+
