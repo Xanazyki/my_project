@@ -69,3 +69,23 @@ def deposit_calculator():
     print(f"Общая прибыль: {profit} руб.")
 
 deposit_calculator()
+
+
+#7. Калькулятор дробей
+from fractions import Fraction
+
+frac1 = Fraction(3, 4)
+frac2 = Fraction(5, 6)
+
+print(f"Первая дробь: {frac1}")
+print(f"Вторая дробь: {frac2}")
+
+sum = frac1 + frac2
+vich = frac1 - frac2
+umn = frac1 * frac2
+delit = frac1 / frac2
+
+print(f"Сложение: {frac1} + {frac2} = {sum}")
+print(f"Вычитание: {frac1} - {frac2} = {vich}")
+print(f"Умножение: {frac1} * {frac2} = {umn}")
+print(f"Деление: {frac1} / {frac2} = {delit}")
